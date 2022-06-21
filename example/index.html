@@ -31,7 +31,7 @@
                 throw 'Did not find card'
             }
 
-            function onMouseUp(e){
+            function onMoveEnd(e){
                 const card = findCard(e)
                 let pos = e.target.getBoundingClientRect()
                 card.animateTo({
@@ -46,7 +46,8 @@
             for ( const[i, card] of deck.cards.entries()){
                 card.setSide(Math.random() < 0.5 ? 'front' : 'back');
 
-                card.$el.addEventListener('mouseup', onMouseUp);
+                card.$el.addEventListener('mouseup', onMoveEnd);
+                card.$el.addEventListener('touchend', onMoveEnd);
 
                 card.enableDragging();
                 card.enableFlipping();
