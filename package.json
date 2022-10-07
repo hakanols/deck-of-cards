@@ -10,7 +10,7 @@
     "build-es6": "rollup lib/deck.js --file ./example/deck.js --format es",
     "build-css": "stylus -u nib css/index.styl -o example/example.css",
     "postversion": "git push --tags",
-    "test": "node example/browser-quick-start.js /example/index.html"
+    "test": "node example/browser-quick-start.mjs /example/index.html"
   },
   "repository": {
     "type": "git",
